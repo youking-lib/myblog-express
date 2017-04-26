@@ -1,5 +1,9 @@
 var User = require('../models/User'),
-    bcrypt = require('bcryptjs')
+    bcrypt = require('bcryptjs'),
+    passport = require('../libs/passport'),
+    auth2Utils = require('../utils/auth2'),
+
+    AccessToken = require('../models/AccessToken')
 
 /**
  * 检查是否登录
@@ -27,7 +31,6 @@ exports.check = function(req, res, next) {
  * @param  {Function} next
  */
 exports.login = function(req, res, next) {
-    
     req.checkBody({
         username: {
             notEmpty: {
@@ -55,53 +58,33 @@ exports.login = function(req, res, next) {
 
     req.getValidationResult().then(errs => {
         if (!errs.isEmpty()) {
-            // Bad Request
-            console.log(errs.array())
             return res.status(400).end()
         }
+        
+        // 本地认证策略
+        passport.authenticate('local', function (err, user, info) {
+            if(err) {
+                return res.status(401).json(err)
+            }
+            if(info) {
+                return res.status(403).send(info)
+            }
+            var token = auth2Utils.signToken()
 
-        User.findOne({ username: req.body.username })
-            .then(user => {
+            AccessToken.findOneAndUpdate({user: user._id}, {
+                token: token,
+                user: user._id,
+                createAt: Date.now()
+            }, {
+                upsert: true
+            }).then(doc => {
 
-                req.session.userId = user._id
-                req.session.user = {
-                    username: user.username,
-                    level: user.level,
-                    id: user._id
-                }
-                
-                if (req.body.autoSignIn) {
-                    req.session.cookie.maxAge = 60 * 1000 * 60 * 24 * 90
-                }
-
-                return bcrypt.compare(req.body.password, user.password)
-            }, err => {
-
-                delete req.session.user
-                delete req.session.userId
-
-                err.type = 'database'
-                return Promise.reject(err)
-            })
-            .then(passed => {
-
-                if (passed) {
-                    res.status(200).json(req.session.user)
-                } else {
-                    return Promise.reject({
-                        code: 'ERROR_IN_PASSWORD',
-                        message: '密码错误! '
-                    })
-                }
-            })
-            .catch(err => {
-                // Unauthorized
-                res.status(401).json({
-                    error: err
-                })
-            })
+                res.status(200).json({token: token})
+            }).catch(err => next(err))
+        })(req, res, next)
     })
 }
+
 
 /**
  * 登出
@@ -119,6 +102,13 @@ exports.signOut = function(req, res, next) {
     })
 }
 
+/**
+ * 获取用户信息
+ * @param  {[object]}   req  [description]
+ * @param  {[object]}   res  [description]
+ * @param  {Function} next [description]
+ */
 exports.getByToken = function(req, res, next) {
     
+    res.status(200).json(req.user)
 }

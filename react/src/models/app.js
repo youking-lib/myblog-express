@@ -1,7 +1,7 @@
-import { login } from '../services/account'
+import { login, getUserByToken } from '../services/app'
 import { message } from 'antd'
 import { routerRedux } from 'dva/router'
-import localStorage from '../services/localStorage'
+import LocalStorage from '../services/LocalStorage'
 
 export default {
     namespace: 'app',
@@ -13,96 +13,111 @@ export default {
             id: null,
         }
     },
-    subscriptions: {},
+    subscriptions: {
+    },
     effects: {
         *login({payload}, {call, put}){
 
             const { callback } = payload
 
             try {
-                const { data } = yield call(login, payload)
+                const data = yield call(login, payload)
+                const { token } = data
+                
+                if(token){
 
-                if(data){
+                    LocalStorage.setItem('token', token)
 
-                    yield put({
-                        type: 'loginSuccess',
-                        payload: { callback, account: data }
-                    })
-
-                    localStorage.setItem('token', 'admin12312313123')
-
+                    yield put({type: 'loginSuccess'})
                     yield put(routerRedux.push('/admin'))
-                }else{
-                    throw new Error('login error')
                 }
             } catch (err) {
-                
-                put({type: 'loginError', payload: {}, err})
+                yield put({type: 'loginError', payload: {}, err})
             }
         },
-        *requireAdmin({payload}, {call, put}){
-            yield [put('checkToken'), put('getUserByToken')]
+        *requireAdmin({next}, {call, put, take}){
+            yield [put({type: 'checkToken'}), put({type: 'getUserByToken'})]
+            yield [take('app/hasToken'), take('app/getUserSuccess')]
+            typeof next === 'function' && next()
+        },
+
+        *autoLogin({next}, {call, put, take}) {
+            const Token = LocalStorage.getItem('token')
+            next()
+
+            if(Token) {
+                yield put({type: 'requireAdmin'})  
+            }else {
+            }
         },
 
         *checkToken({}, {call, put}){
-            const Token = localStorage.getItem('token')
+            const Token = LocalStorage.getItem('token')
 
             if(Token){
                 yield put({type: 'hasToken'})
             }else{
-                throw new Error('unlogin...')
+                yield put({type: 'loginError', err: {message: '还没有登录'}})
+                yield put(routerRedux.goBack())
             }
         },
 
         *getUserByToken({}, {call, put}){
+            
+            try {
+                var data = yield getUserByToken()
+                if(data) {
+                    yield put({type: 'getUserSuccess', payload: data})
+                }
+            } catch (err) {
+                yield put({type: 'loginError', err: {message: '登录失效了！'}})
+                yield put(routerRedux.replace('/'))
+            }
+        },
 
+        *logout({next}, {call, put}) {
+            yield put({type: 'loginError', err: {message: '已注销'}})
+            LocalStorage.removeItem('token')
+            yield put(routerRedux.replace('/'))
+            next()
+        },
+
+        *loginError({err}, {put}){
+            message.error(err.message, 4)
+            yield put({type: 'authAbort'})
         }
-
 
     },
     reducers: {
         loginSuccess(state, {payload}){
-            
-            const { account, callback } = payload
-            typeof callback === 'function' && callback()
+            typeof payload !== 'undefined' && typeof payload.callback === 'function' && callback()
             
             message.success('success and welcome')
-
             return {
                 ...state, 
-                account,
                 isLogin: true
             }
         },
-        loginError(state, { payload, err }){
-
-            message.error(err.message, 4)
-
-            return {
-                ...state, isLogin: false
-            }
-        },
-
-        requireAdmin(state, {payload}){
-            
-            if (state.isLogin) {
-                
-                if(state.account.level >= 11) {
-                    payload.next()
-                }else{
-                    message.error('你不是管理员哦！')
-                }
-            } else {
-                message.warning('你还没有登录', 4)
-            }
-
-            return {
-                ...state
-            }
-        },
+        
         hasToken(state){
             return {
                 ...state, isLogin: true
+            }
+        },
+
+        getUserSuccess(state, {payload}) {
+            return {
+                ...state, account: {...payload}
+            }
+        },
+
+        authAbort(state) {
+            return {
+                ...state, isLogin: false, account: {
+                    username: '',
+                    level: 0,
+                    id: null,
+                }
             }
         }
     }

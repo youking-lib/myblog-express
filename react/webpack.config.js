@@ -1,11 +1,17 @@
-const webpack = require('atool-build/lib/webpack');
+const webpack = require('atool-build/lib/webpack')
+const path = require('path')
 
 module.exports = function(webpackConfig, env) {
+
   webpackConfig.babel.plugins.push('transform-runtime');
   webpackConfig.babel.plugins.push(['import', {
     "libraryName": "antd",
     "style": true
   }])
+
+  webpackConfig.resolve.alias = webpackConfig.resolve.alias || {}
+  webpackConfig.resolve.alias.components = path.join(__dirname, './src/components')
+
   // Support hmr
   if (env === 'development') {
     webpackConfig.devtool = '#eval';

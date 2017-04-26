@@ -1,6 +1,7 @@
 import './index.html'
 import './index.less'
 import dva from 'dva'
+import createLoading from 'dva-loading'
 
 import fetch from 'dva/fetch'
 
@@ -8,11 +9,13 @@ import fetch from 'dva/fetch'
 const app = dva()
 
 // 2. Plugins
-//app.use({})
+app.use(createLoading({effects: true}))
 
 // 3. Model
 //app.model(require('./models/example'))
 app.model(require('./models/app'))
+app.model(require('./models/article'))
+app.model(require('./models/keyword'))
 
 // 4. Router
 app.router(require('./router'))

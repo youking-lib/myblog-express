@@ -6,7 +6,14 @@
   "dependencies": {
     "antd": "^2.8.1",
     "babel-plugin-import": "^1.1.1",
+    "components": "^0.1.0",
+    "draft-js": "^0.10.0",
+    "draft-js-markdown-shortcuts-plugin": "^0.1.0",
+    "draft-js-plugins-editor": "^2.0.0-beta10",
+    "draft-js-prism": "^1.0.3",
+    "draftjs-md-converter": "^0.1.1",
     "dva": "^1.2.1",
+    "dva-loading": "^0.2.1",
     "react": "^15.1.0",
     "react-dom": "^15.1.0"
   },

@@ -87,10 +87,12 @@ class App extends React.Component {
 	}
 
 	handleSubmit = () => {
+		const { doLogin } = this.props
 		const form = this.refs.form
+
 		form.validateFields((err, values) => {
 			if (err === null) {
-				this.props.doLogin({
+				typeof doLogin==='function' && this.props.doLogin({
 					...values,
 					callback: this.handleCancel
 				})

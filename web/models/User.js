@@ -2,6 +2,7 @@ var mongoose = require('mongoose'),
     sha1 = require('../utils/sha1'),
     bcrypt = require('bcryptjs')
 
+
 var UserSchema = new mongoose.Schema({
     username: {
         type: String,

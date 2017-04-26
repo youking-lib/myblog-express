@@ -9,5 +9,9 @@ exports.setItem = function(key, value){
 }
 
 exports.getItem = (key) => {
-    return window.localStorage.getItem(STORE_PREFIX + '-' + key, value)
+    return window.localStorage.getItem(STORE_PREFIX + '-' + key)
+}
+
+exports.removeItem = function(key) {
+    return window.localStorage.removeItem(STORE_PREFIX + '-' + key)
 }

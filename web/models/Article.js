@@ -1,5 +1,5 @@
 var mongoose = require('mongoose'),
-    
+
     ObjectId = mongoose.Schema.Types.ObjectId
 
 var ArticleSchema = new mongoose.Schema({
@@ -12,19 +12,17 @@ var ArticleSchema = new mongoose.Schema({
         required: true
     },
     author: {
-        type: ObjectId,
+        type: String,
         ref: 'Users',
-        required: true,
+        default: 'whistleyz'
     },
     meta: {
         createAt: {
             type: Date,
-            required: true,
             default: Date.now()
         },
         updateAt: {
             type: Date,
-            required: true,
             default: Date.now()
         }
     },
@@ -34,6 +32,15 @@ var ArticleSchema = new mongoose.Schema({
     }]
 })
 
+ArticleSchema.pre('save', (next) => {
+    this.meta = {}
+    if (this.isNew) {
+        this.meta.createAt = this.meta.updateAt = Date.now()
+    } else {
+        this.meta.updateAt = Date.now()
+    }
 
+    next()
+})
 
 module.exports = mongoose.model('Articles', ArticleSchema)
