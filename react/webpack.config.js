@@ -1,7 +1,11 @@
 const webpack = require('atool-build/lib/webpack')
 const path = require('path')
+const HTMLWebpackPlugin = require('html-webpack-plugin')
 
 module.exports = function(webpackConfig, env) {
+  webpackConfig.output.path = path.join(__dirname, '../web/public/assets')
+  webpackConfig.output.publicPath = '/public/assets/'
+  webpackConfig.output.filename = '[name]-[hash].js'
 
   webpackConfig.babel.plugins.push('transform-runtime');
   webpackConfig.babel.plugins.push(['import', {
@@ -45,6 +49,15 @@ module.exports = function(webpackConfig, env) {
       loader.test = /\.css$/;
     }
   });
+
+
+  webpackConfig.plugins.push(new HTMLWebpackPlugin({
+    template: 'index.ejs',
+    title: 'fsblog',
+    inject: true
+  }))
+
+  console.log(webpackConfig.output)
 
   return webpackConfig;
 };
