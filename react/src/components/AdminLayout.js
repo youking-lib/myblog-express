@@ -50,6 +50,7 @@ class AdminLayout extends React.Component {
                               title={<span><Icon type="setting" /><span className="nav-text">配置</span></span>}
                             >
                                 <Menu.Item key="keyword"><Link to="/admin/keyword">关键词</Link></Menu.Item>
+                                <Menu.Item key="carousel"><Link to="/admin/carousel">旋转木马</Link></Menu.Item>
                                 <Menu.Item key="3">Alex</Menu.Item>
                             </SubMenu>
                         </Menu>

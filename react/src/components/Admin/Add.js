@@ -29,6 +29,7 @@ class Add extends Component {
         this.onTitleValueChange = this.onTitleValueChange.bind(this)
         this.handleEditorSubmit = this.handleEditorSubmit.bind(this)
 
+        const titleValue = this.props.draft.title || ''
 
         this.state = {
             isEditing: false,
@@ -37,29 +38,39 @@ class Add extends Component {
         }
     }
 
-    onTitleValueChange(e){
-        this.setState({
-            titleValue: e.target.value,
-            isEditing: true
+    onTitleValueChange = (e) => {
+        this.props.handleEidting({
+            ...this.props.draft, 
+            title: e.target.value
         })
     }
 
-    handleEditorSubmit(contentValue){
-        const { titleValue, selectedKeywords } = this.state
-        const { keywords } = this.props
-        const _selectedKeywords = selectedKeywords.map(index => keywords[index]._id)
+    onEditorStateChange = (value) => {
+        this.props.handleEidting({
+            ...this.props.draft, 
+            editorState: value
+        })   
+    }
 
-        if(titleValue){
+    onResetDraft = () => {
+        const { resetDraft } = this.props
+        resetDraft()
+    }
+
+    onKeywordsSelect = (value) => {
+        this.props.handleEidting({
+            ...this.props.draft, 
+            keywords: value
+        })
+    }
+
+    handleEditorSubmit = (contentValue) => {
+        const { routeParams, draft } = this.props
+        const { keywords } = this.props
+
+        if(draft.title){
             this.props.postArticle({
-                title: titleValue,
-                content: contentValue,
-                keywords: _selectedKeywords
-            }, () => {
-                this.setState({
-                    titleValue: '',
-                    isEditing: false,
-                    selectedKeywords: []
-                })
+                ...draft
             })
         }else{
             message.error('不能没有标题哦！')
@@ -67,15 +78,14 @@ class Add extends Component {
     }
 
     render(){
-        const { titleValue } = this.state
-        const { keywords } = this.props
-
+        const { title, content, editorState, keywords } = this.props.draft
+        const keywordsOrigin = this.props.keywords
         return (
             <div style={{position: 'relative'}}>
                 <Header style={{padding: '16px'}}>
                     <InputGroup size="large">
                         <Col span="16">
-                            <Input onChange={this.onTitleValueChange} value={ titleValue } placeholder="请输入标题" />
+                            <Input onChange={this.onTitleValueChange} value={ title } placeholder="请输入标题" />
                         </Col>
                         <Col span="8">
                             <Select
@@ -83,15 +93,16 @@ class Add extends Component {
                                 size="large"
                                 style={{ width: '100%', display: 'block' }}
                                 placeholder="Please select"
-                                onChange={(value) => this.setState({selectedKeywords: value})}
+                                defaultValue={keywords.map(item => item._id)}
+                                onChange={(value) => this.onKeywordsSelect(value)}
                             >
-                                {keywords.map(item => <Option key={item.key}>{item.title}</Option>)}
+                                {keywordsOrigin.map(item => <Option value={item._id} key={item.key}>{item.title}</Option>)}
                             </Select>
                         </Col>
                     </InputGroup>
                 </Header>
                 <Content style={{}}>
-                    <Editor onSubmit={this.handleEditorSubmit} />
+                    <Editor resetEditor={this.onResetDraft} onSubmit={this.handleEditorSubmit} editorState={editorState} onEditorStateChange={this.onEditorStateChange} />
                 </Content>
             </div>
             )

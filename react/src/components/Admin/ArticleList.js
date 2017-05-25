@@ -1,7 +1,6 @@
 import React from 'react'
-import { Table, Spin } from 'antd'
-
-
+import { Table, Spin, Popconfirm } from 'antd'
+import { Link } from 'dva/router'
 
 const rowSelection = {
     onChange: (selectedRowKeys, selectedRows) => {
@@ -23,13 +22,12 @@ const Article = ({articles, deleteArticle, loading}) => {
         {
             title: '标题',
             dataIndex: 'title',
-            render: text => <a href="#">{text}</a>,
+            render: (text, record, index) => {
+                return <Link to={`/article/${record._id}`}>{record.title}</Link>
+            }
         }, {
             title: '作者',
             dataIndex: 'author',
-        }, {
-            title: '创建时间',
-            dataIndex: 'meta.createAt',
         }, {
             title: '修改时间',
             dataIndex: 'meta.updateAt',
@@ -48,9 +46,11 @@ const Article = ({articles, deleteArticle, loading}) => {
             render(text, record, index){
                 return (
                     <span>
-                        <a>Edit</a>
+                        <Link to={`/admin/add/${record._id}`}>编辑</Link>
                         <span className="ant-divider" />
-                        <a onClick={() => {deleteArticle(record._id)}}>Delete</a>
+                        <Popconfirm title="Are you sure？" onConfirm={() => { deleteArticle(record._id) }}>
+                            <a href="#">Delete</a>
+                        </Popconfirm>
                     </span>
                     );
             }

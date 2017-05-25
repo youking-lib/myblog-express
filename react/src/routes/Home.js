@@ -8,32 +8,33 @@ import MainLayout from '../components/MainLayout'
 import UserCard from '../components/UserCard'
 
 function Home(props) {
-	
     const { children, account, isLogin, dispatch, history, route, routes } = props
-
     const mainProps = {
 		children, account, dispatch, route, routes, doLogin, isLogin
 	}
+    const childRouteProps = children.props.route
+    const { isUsercardHidden } = childRouteProps
     
     function doLogin (data) {
         const { username, password, callback } = data
         dispatch({type: 'app/login', payload: {username, password, callback}})
     }
-    
 
 	return (
 		<MainLayout {...mainProps}>
-            <div style={{ background: '#fff', padding: '0 24px 24px', minHeight: 280, overflow: 'hidden' }}>
-                <Breadcrumb style={{ margin: '12px 0' }}>
-                    <Breadcrumb.Item>Home</Breadcrumb.Item>
-                    <Breadcrumb.Item>List</Breadcrumb.Item>
-                    <Breadcrumb.Item>App</Breadcrumb.Item>
-                </Breadcrumb>
+            <div style={{ background: '#fff', padding: '16px', minHeight: 280, overflow: 'hidden' }}>
+                {/*
+                    <Breadcrumb style={{ margin: '12px 0' }}>
+                        <Breadcrumb.Item>Home</Breadcrumb.Item>
+                        <Breadcrumb.Item>List</Breadcrumb.Item>
+                        <Breadcrumb.Item>App</Breadcrumb.Item>
+                    </Breadcrumb>
+                */}
                 <Row gutter={24}>
                     <Col span={6}>
-                        <UserCard />
+                        {!isUsercardHidden && <UserCard />}
                     </Col>
-                    <Col span={18}>
+                    <Col span={isUsercardHidden ? 24 : 18 }>
                         {children}
                     </Col>
                 </Row>

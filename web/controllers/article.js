@@ -1,4 +1,6 @@
-var Article = require('../models/article')
+var Article = require('../models/article'),
+    Timeline = require('./timeline'),
+    async = require('async')
 
 /**
  * 获取文章列表
@@ -14,6 +16,7 @@ exports.list = (req, res, next) => {
             res.status(200).json({data: docs})
         })
         .catch(err => {
+            err.type = 'database'
             next(err)
         })
 }
@@ -22,6 +25,9 @@ exports.list = (req, res, next) => {
  * 发表文章
  */
 exports.create = (req, res, next) => {
+    var _id = req.body._id
+    delete req.body._id
+
     req.checkBody({
         title: {
             notEmpty: {
@@ -41,12 +47,43 @@ exports.create = (req, res, next) => {
         if (!errs.isEmpty()) {
             return req.status(400).end(errs)
         }
-        Article
-            .create(req.body)
-            .then(doc => {
-                res.status(200).send({data: doc})
+        // 更新文章
+        if (_id) {
+            (new Article(req.body))
+                // .save()
+                // .findByIdAndUpdate(_id, {$set: req.body})
+                .save(doc => {
+                    res.status(200).json({data: doc})
+                })
+        } 
+        // 创建文章
+        else {
+            async.waterfall([
+                function(callback){
+                    Article
+                        .create(req.body)
+                        .then(doc => callback(null, doc))
+                        .catch(err => callback(err))
+                },
+                function(article, callback){
+                    var record = {
+                        title: article.title,
+                        type: 'article',
+                        quoteId: article._id
+                    }
+                    Timeline
+                        .autoCreate(record)
+                        .then(doc => {
+                            callback(null, article)
+                        })
+                        .catch(err => callback(err))
+                }
+            ], function(err, article) {
+                if(err) return next(err)
+
+                res.status(200).json({data: article})
             })
-            .catch(err => next(err))
+        }
     })
 }
 

@@ -1,0 +1,32 @@
+[2017-05-24 16:55:37.818] [ERROR] database - { [TypeError: moment(...).starOf is not a function] type: 'database' }
+TypeError: moment(...).starOf is not a function
+    at _createTimeline (/Users/codingbro/web/Project/fs-blog/web/controllers/timeline.js:41:26)
+    at /Users/codingbro/web/Project/fs-blog/web/controllers/timeline.js:32:9
+    at Object.exports.query.Timeline.find.then.exports.create.exports.autoCreate.data [as autoCreate] (/Users/codingbro/web/Project/fs-blog/web/controllers/timeline.js:31:12)
+    at /Users/codingbro/web/Project/fs-blog/web/controllers/article.js:69:26
+    at tryCatcher (/Users/codingbro/web/Project/fs-blog/web/node_modules/.3.5.0@bluebird/js/release/util.js:16:23)
+    at Promise._settlePromiseFromHandler (/Users/codingbro/web/Project/fs-blog/web/node_modules/.3.5.0@bluebird/js/release/promise.js:512:31)
+    at Promise._settlePromise (/Users/codingbro/web/Project/fs-blog/web/node_modules/.3.5.0@bluebird/js/release/promise.js:569:18)
+    at Promise._settlePromise0 (/Users/codingbro/web/Project/fs-blog/web/node_modules/.3.5.0@bluebird/js/release/promise.js:614:10)
+    at Promise._settlePromises (/Users/codingbro/web/Project/fs-blog/web/node_modules/.3.5.0@bluebird/js/release/promise.js:693:18)
+    at Async._drainQueue (/Users/codingbro/web/Project/fs-blog/web/node_modules/.3.5.0@bluebird/js/release/async.js:133:16)
+    at Async._drainQueues (/Users/codingbro/web/Project/fs-blog/web/node_modules/.3.5.0@bluebird/js/release/async.js:143:10)
+    at Immediate.Async.drainQueues [as _onImmediate] (/Users/codingbro/web/Project/fs-blog/web/node_modules/.3.5.0@bluebird/js/release/async.js:17:14)
+    at tryOnImmediate (timers.js:534:15)
+    at processImmediate [as _immediateCallback] (timers.js:514:5)
+[2017-05-24 17:06:26.621] [ERROR] database - { [TypeError: moment(...).starOf is not a function] type: 'database' }
+TypeError: moment(...).starOf is not a function
+    at _createTimeline (/Users/codingbro/web/Project/fs-blog/web/controllers/timeline.js:41:26)
+    at /Users/codingbro/web/Project/fs-blog/web/controllers/timeline.js:32:9
+    at Object.exports.query.Timeline.find.then.exports.create.exports.autoCreate.data [as autoCreate] (/Users/codingbro/web/Project/fs-blog/web/controllers/timeline.js:31:12)
+    at /Users/codingbro/web/Project/fs-blog/web/controllers/article.js:69:26
+    at tryCatcher (/Users/codingbro/web/Project/fs-blog/web/node_modules/.3.5.0@bluebird/js/release/util.js:16:23)
+    at Promise._settlePromiseFromHandler (/Users/codingbro/web/Project/fs-blog/web/node_modules/.3.5.0@bluebird/js/release/promise.js:512:31)
+    at Promise._settlePromise (/Users/codingbro/web/Project/fs-blog/web/node_modules/.3.5.0@bluebird/js/release/promise.js:569:18)
+    at Promise._settlePromise0 (/Users/codingbro/web/Project/fs-blog/web/node_modules/.3.5.0@bluebird/js/release/promise.js:614:10)
+    at Promise._settlePromises (/Users/codingbro/web/Project/fs-blog/web/node_modules/.3.5.0@bluebird/js/release/promise.js:693:18)
+    at Async._drainQueue (/Users/codingbro/web/Project/fs-blog/web/node_modules/.3.5.0@bluebird/js/release/async.js:133:16)
+    at Async._drainQueues (/Users/codingbro/web/Project/fs-blog/web/node_modules/.3.5.0@bluebird/js/release/async.js:143:10)
+    at Immediate.Async.drainQueues [as _onImmediate] (/Users/codingbro/web/Project/fs-blog/web/node_modules/.3.5.0@bluebird/js/release/async.js:17:14)
+    at tryOnImmediate (timers.js:534:15)
+    at processImmediate [as _immediateCallback] (timers.js:514:5)

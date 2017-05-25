@@ -8,8 +8,11 @@ var ArticleSchema = new mongoose.Schema({
         required: true
     },
     content: {
-        type: String,
-        required: true
+        blocks: Array,
+        entityMap: {
+            type: Object,
+            default: {}
+        }
     },
     author: {
         type: String,

@@ -34,7 +34,6 @@ passport.use(new BearerStrategy(function(token, done){
             done(null, false, {error: '未认证! '})
         }
 
-        console.log('BearerStrategy', doc)
         done(null, doc.user)
     }).catch(err => {
         done(err)

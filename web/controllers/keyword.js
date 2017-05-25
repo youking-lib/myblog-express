@@ -21,7 +21,6 @@ exports.create = (req, res, next) => {
         Keyword
             .create(req.body)
             .then(doc => {
-                console.log('doc', doc)
                 res.status(200).send({success: '创建成功！', data: doc})
             })
             .catch(err => res.status(400).send(err))
@@ -40,7 +39,10 @@ exports.list = (req, res, next) => {
         .then(docs => {
             res.status(200).json({data: docs})
         })
-        .catch(err => next(err))
+        .catch(err => {
+            err.type = 'database'
+            next(err)
+        })
 }
 
 /**
@@ -55,7 +57,10 @@ exports.del = (req, res, next) => {
         .then(doc => {
             res.status(200).send({success: '删除成功!'})
         })
-        .catch(err => next(err))
+        .catch(err => {
+            err.type = 'database'
+            next(err)
+        })
 }
 
 

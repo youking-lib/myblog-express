@@ -16,6 +16,8 @@ app.use(createLoading({effects: true}))
 app.model(require('./models/app'))
 app.model(require('./models/article'))
 app.model(require('./models/keyword'))
+app.model(require('./models/media'))
+app.model(require('./models/archive'))
 
 // 4. Router
 app.router(require('./router'))

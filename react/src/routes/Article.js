@@ -3,10 +3,17 @@ import { connect } from 'dva'
 
 import ArticleDetail from '../components/ArticleDetail'
 
-const Article = (props) => {
+const Article = ({preview}) => {
     return (
-        <ArticleDetail />
+        <ArticleDetail preview={preview} />
         )
 }
 
-export default Article
+const mapStateToProps = ({article}) => {
+    const { preview } = article
+    return {
+        preview
+    }
+}
+
+export default connect(mapStateToProps)(Article)

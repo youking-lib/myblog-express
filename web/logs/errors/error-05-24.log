@@ -1,0 +1,355 @@
+[2017-05-24 16:08:33.246] [ERROR] system - [TypeError: Cannot read property 'user' of null]
+TypeError: Cannot read property 'user' of null
+    at /Users/codingbro/web/Project/fs-blog/web/libs/passport.js:38:23
+    at process._tickCallback (internal/process/next_tick.js:103:7)
+[2017-05-24 16:08:33.283] [ERROR] console - Error: Can't set headers after they are sent.
+    at ServerResponse.OutgoingMessage.setHeader (_http_outgoing.js:346:11)
+    at ServerResponse.header (/Users/codingbro/web/Project/fs-blog/web/node_modules/.4.13.4@express/lib/response.js:718:10)
+    at ServerResponse.json (/Users/codingbro/web/Project/fs-blog/web/node_modules/.4.13.4@express/lib/response.js:246:10)
+    at exports.notFound.exports.error (/Users/codingbro/web/Project/fs-blog/web/controllers/error.js:13:28)
+    at Layer.handle_error (/Users/codingbro/web/Project/fs-blog/web/node_modules/.4.13.4@express/lib/router/layer.js:71:5)
+    at trim_prefix (/Users/codingbro/web/Project/fs-blog/web/node_modules/.4.13.4@express/lib/router/index.js:310:13)
+    at /Users/codingbro/web/Project/fs-blog/web/node_modules/.4.13.4@express/lib/router/index.js:280:7
+    at Function.process_params (/Users/codingbro/web/Project/fs-blog/web/node_modules/.4.13.4@express/lib/router/index.js:330:12)
+    at next (/Users/codingbro/web/Project/fs-blog/web/node_modules/.4.13.4@express/lib/router/index.js:271:10)
+    at Layer.handle_error (/Users/codingbro/web/Project/fs-blog/web/node_modules/.4.13.4@express/lib/router/layer.js:67:12)
+    at trim_prefix (/Users/codingbro/web/Project/fs-blog/web/node_modules/.4.13.4@express/lib/router/index.js:310:13)
+    at /Users/codingbro/web/Project/fs-blog/web/node_modules/.4.13.4@express/lib/router/index.js:280:7
+    at Function.process_params (/Users/codingbro/web/Project/fs-blog/web/node_modules/.4.13.4@express/lib/router/index.js:330:12)
+    at Immediate.next (/Users/codingbro/web/Project/fs-blog/web/node_modules/.4.13.4@express/lib/router/index.js:271:10)
+    at Immediate.<anonymous> (/Users/codingbro/web/Project/fs-blog/web/node_modules/.4.13.4@express/lib/router/index.js:618:15)
+    at Immediate.immediate._onImmediate (timers.js:572:18)
+    at tryOnImmediate (timers.js:534:15)
+    at processImmediate [as _immediateCallback] (timers.js:514:5)
+[2017-05-24 16:08:44.816] [ERROR] access - POST /api/v1/login
+[2017-05-24 16:08:52.879] [ERROR] access - POST /api/v1/login
+[2017-05-24 16:09:10.183] [ERROR] system - [TypeError: Cannot read property 'user' of null]
+TypeError: Cannot read property 'user' of null
+    at /Users/codingbro/web/Project/fs-blog/web/libs/passport.js:38:23
+    at process._tickCallback (internal/process/next_tick.js:103:7)
+[2017-05-24 16:09:10.193] [ERROR] console - Error: Can't set headers after they are sent.
+    at ServerResponse.OutgoingMessage.setHeader (_http_outgoing.js:346:11)
+    at ServerResponse.header (/Users/codingbro/web/Project/fs-blog/web/node_modules/.4.13.4@express/lib/response.js:718:10)
+    at ServerResponse.json (/Users/codingbro/web/Project/fs-blog/web/node_modules/.4.13.4@express/lib/response.js:246:10)
+    at exports.notFound.exports.error (/Users/codingbro/web/Project/fs-blog/web/controllers/error.js:13:28)
+    at Layer.handle_error (/Users/codingbro/web/Project/fs-blog/web/node_modules/.4.13.4@express/lib/router/layer.js:71:5)
+    at trim_prefix (/Users/codingbro/web/Project/fs-blog/web/node_modules/.4.13.4@express/lib/router/index.js:310:13)
+    at /Users/codingbro/web/Project/fs-blog/web/node_modules/.4.13.4@express/lib/router/index.js:280:7
+    at Function.process_params (/Users/codingbro/web/Project/fs-blog/web/node_modules/.4.13.4@express/lib/router/index.js:330:12)
+    at next (/Users/codingbro/web/Project/fs-blog/web/node_modules/.4.13.4@express/lib/router/index.js:271:10)
+    at Layer.handle_error (/Users/codingbro/web/Project/fs-blog/web/node_modules/.4.13.4@express/lib/router/layer.js:67:12)
+    at trim_prefix (/Users/codingbro/web/Project/fs-blog/web/node_modules/.4.13.4@express/lib/router/index.js:310:13)
+    at /Users/codingbro/web/Project/fs-blog/web/node_modules/.4.13.4@express/lib/router/index.js:280:7
+    at Function.process_params (/Users/codingbro/web/Project/fs-blog/web/node_modules/.4.13.4@express/lib/router/index.js:330:12)
+    at Immediate.next (/Users/codingbro/web/Project/fs-blog/web/node_modules/.4.13.4@express/lib/router/index.js:271:10)
+    at Immediate.<anonymous> (/Users/codingbro/web/Project/fs-blog/web/node_modules/.4.13.4@express/lib/router/index.js:618:15)
+    at Immediate.immediate._onImmediate (timers.js:572:18)
+    at tryOnImmediate (timers.js:534:15)
+    at processImmediate [as _immediateCallback] (timers.js:514:5)
+[2017-05-24 16:09:10.408] [ERROR] system - [TypeError: Cannot read property 'user' of null]
+TypeError: Cannot read property 'user' of null
+    at /Users/codingbro/web/Project/fs-blog/web/libs/passport.js:38:23
+    at process._tickCallback (internal/process/next_tick.js:103:7)
+[2017-05-24 16:09:10.414] [ERROR] access - GET /api/v1/user
+[2017-05-24 16:09:10.421] [ERROR] console - Error: Can't set headers after they are sent.
+    at ServerResponse.OutgoingMessage.setHeader (_http_outgoing.js:346:11)
+    at ServerResponse.header (/Users/codingbro/web/Project/fs-blog/web/node_modules/.4.13.4@express/lib/response.js:718:10)
+    at ServerResponse.json (/Users/codingbro/web/Project/fs-blog/web/node_modules/.4.13.4@express/lib/response.js:246:10)
+    at exports.notFound.exports.error (/Users/codingbro/web/Project/fs-blog/web/controllers/error.js:13:28)
+    at Layer.handle_error (/Users/codingbro/web/Project/fs-blog/web/node_modules/.4.13.4@express/lib/router/layer.js:71:5)
+    at trim_prefix (/Users/codingbro/web/Project/fs-blog/web/node_modules/.4.13.4@express/lib/router/index.js:310:13)
+    at /Users/codingbro/web/Project/fs-blog/web/node_modules/.4.13.4@express/lib/router/index.js:280:7
+    at Function.process_params (/Users/codingbro/web/Project/fs-blog/web/node_modules/.4.13.4@express/lib/router/index.js:330:12)
+    at next (/Users/codingbro/web/Project/fs-blog/web/node_modules/.4.13.4@express/lib/router/index.js:271:10)
+    at Layer.handle_error (/Users/codingbro/web/Project/fs-blog/web/node_modules/.4.13.4@express/lib/router/layer.js:67:12)
+    at trim_prefix (/Users/codingbro/web/Project/fs-blog/web/node_modules/.4.13.4@express/lib/router/index.js:310:13)
+    at /Users/codingbro/web/Project/fs-blog/web/node_modules/.4.13.4@express/lib/router/index.js:280:7
+    at Function.process_params (/Users/codingbro/web/Project/fs-blog/web/node_modules/.4.13.4@express/lib/router/index.js:330:12)
+    at Immediate.next (/Users/codingbro/web/Project/fs-blog/web/node_modules/.4.13.4@express/lib/router/index.js:271:10)
+    at Immediate.<anonymous> (/Users/codingbro/web/Project/fs-blog/web/node_modules/.4.13.4@express/lib/router/index.js:618:15)
+    at Immediate.immediate._onImmediate (timers.js:572:18)
+    at tryOnImmediate (timers.js:534:15)
+    at processImmediate [as _immediateCallback] (timers.js:514:5)
+[2017-05-24 16:09:10.438] [ERROR] system - [TypeError: Cannot read property 'user' of null]
+TypeError: Cannot read property 'user' of null
+    at /Users/codingbro/web/Project/fs-blog/web/libs/passport.js:38:23
+    at process._tickCallback (internal/process/next_tick.js:103:7)
+[2017-05-24 16:09:10.442] [ERROR] access - GET /api/v1/user
+[2017-05-24 16:09:10.445] [ERROR] console - Error: Can't set headers after they are sent.
+    at ServerResponse.OutgoingMessage.setHeader (_http_outgoing.js:346:11)
+    at ServerResponse.header (/Users/codingbro/web/Project/fs-blog/web/node_modules/.4.13.4@express/lib/response.js:718:10)
+    at ServerResponse.json (/Users/codingbro/web/Project/fs-blog/web/node_modules/.4.13.4@express/lib/response.js:246:10)
+    at exports.notFound.exports.error (/Users/codingbro/web/Project/fs-blog/web/controllers/error.js:13:28)
+    at Layer.handle_error (/Users/codingbro/web/Project/fs-blog/web/node_modules/.4.13.4@express/lib/router/layer.js:71:5)
+    at trim_prefix (/Users/codingbro/web/Project/fs-blog/web/node_modules/.4.13.4@express/lib/router/index.js:310:13)
+    at /Users/codingbro/web/Project/fs-blog/web/node_modules/.4.13.4@express/lib/router/index.js:280:7
+    at Function.process_params (/Users/codingbro/web/Project/fs-blog/web/node_modules/.4.13.4@express/lib/router/index.js:330:12)
+    at next (/Users/codingbro/web/Project/fs-blog/web/node_modules/.4.13.4@express/lib/router/index.js:271:10)
+    at Layer.handle_error (/Users/codingbro/web/Project/fs-blog/web/node_modules/.4.13.4@express/lib/router/layer.js:67:12)
+    at trim_prefix (/Users/codingbro/web/Project/fs-blog/web/node_modules/.4.13.4@express/lib/router/index.js:310:13)
+    at /Users/codingbro/web/Project/fs-blog/web/node_modules/.4.13.4@express/lib/router/index.js:280:7
+    at Function.process_params (/Users/codingbro/web/Project/fs-blog/web/node_modules/.4.13.4@express/lib/router/index.js:330:12)
+    at Immediate.next (/Users/codingbro/web/Project/fs-blog/web/node_modules/.4.13.4@express/lib/router/index.js:271:10)
+    at Immediate.<anonymous> (/Users/codingbro/web/Project/fs-blog/web/node_modules/.4.13.4@express/lib/router/index.js:618:15)
+    at Immediate.immediate._onImmediate (timers.js:572:18)
+    at tryOnImmediate (timers.js:534:15)
+    at processImmediate [as _immediateCallback] (timers.js:514:5)
+[2017-05-24 16:09:10.555] [ERROR] system - [TypeError: Cannot read property 'user' of null]
+TypeError: Cannot read property 'user' of null
+    at /Users/codingbro/web/Project/fs-blog/web/libs/passport.js:38:23
+    at process._tickCallback (internal/process/next_tick.js:103:7)
+[2017-05-24 16:09:10.562] [ERROR] console - Error: Can't set headers after they are sent.
+    at ServerResponse.OutgoingMessage.setHeader (_http_outgoing.js:346:11)
+    at ServerResponse.header (/Users/codingbro/web/Project/fs-blog/web/node_modules/.4.13.4@express/lib/response.js:718:10)
+    at ServerResponse.json (/Users/codingbro/web/Project/fs-blog/web/node_modules/.4.13.4@express/lib/response.js:246:10)
+    at exports.notFound.exports.error (/Users/codingbro/web/Project/fs-blog/web/controllers/error.js:13:28)
+    at Layer.handle_error (/Users/codingbro/web/Project/fs-blog/web/node_modules/.4.13.4@express/lib/router/layer.js:71:5)
+    at trim_prefix (/Users/codingbro/web/Project/fs-blog/web/node_modules/.4.13.4@express/lib/router/index.js:310:13)
+    at /Users/codingbro/web/Project/fs-blog/web/node_modules/.4.13.4@express/lib/router/index.js:280:7
+    at Function.process_params (/Users/codingbro/web/Project/fs-blog/web/node_modules/.4.13.4@express/lib/router/index.js:330:12)
+    at next (/Users/codingbro/web/Project/fs-blog/web/node_modules/.4.13.4@express/lib/router/index.js:271:10)
+    at Layer.handle_error (/Users/codingbro/web/Project/fs-blog/web/node_modules/.4.13.4@express/lib/router/layer.js:67:12)
+    at trim_prefix (/Users/codingbro/web/Project/fs-blog/web/node_modules/.4.13.4@express/lib/router/index.js:310:13)
+    at /Users/codingbro/web/Project/fs-blog/web/node_modules/.4.13.4@express/lib/router/index.js:280:7
+    at Function.process_params (/Users/codingbro/web/Project/fs-blog/web/node_modules/.4.13.4@express/lib/router/index.js:330:12)
+    at Immediate.next (/Users/codingbro/web/Project/fs-blog/web/node_modules/.4.13.4@express/lib/router/index.js:271:10)
+    at Immediate.<anonymous> (/Users/codingbro/web/Project/fs-blog/web/node_modules/.4.13.4@express/lib/router/index.js:618:15)
+    at Immediate.immediate._onImmediate (timers.js:572:18)
+    at tryOnImmediate (timers.js:534:15)
+    at processImmediate [as _immediateCallback] (timers.js:514:5)
+[2017-05-24 16:09:10.598] [ERROR] system - [TypeError: Cannot read property 'user' of null]
+TypeError: Cannot read property 'user' of null
+    at /Users/codingbro/web/Project/fs-blog/web/libs/passport.js:38:23
+    at process._tickCallback (internal/process/next_tick.js:103:7)
+[2017-05-24 16:09:10.605] [ERROR] console - Error: Can't set headers after they are sent.
+    at ServerResponse.OutgoingMessage.setHeader (_http_outgoing.js:346:11)
+    at ServerResponse.header (/Users/codingbro/web/Project/fs-blog/web/node_modules/.4.13.4@express/lib/response.js:718:10)
+    at ServerResponse.json (/Users/codingbro/web/Project/fs-blog/web/node_modules/.4.13.4@express/lib/response.js:246:10)
+    at exports.notFound.exports.error (/Users/codingbro/web/Project/fs-blog/web/controllers/error.js:13:28)
+    at Layer.handle_error (/Users/codingbro/web/Project/fs-blog/web/node_modules/.4.13.4@express/lib/router/layer.js:71:5)
+    at trim_prefix (/Users/codingbro/web/Project/fs-blog/web/node_modules/.4.13.4@express/lib/router/index.js:310:13)
+    at /Users/codingbro/web/Project/fs-blog/web/node_modules/.4.13.4@express/lib/router/index.js:280:7
+    at Function.process_params (/Users/codingbro/web/Project/fs-blog/web/node_modules/.4.13.4@express/lib/router/index.js:330:12)
+    at next (/Users/codingbro/web/Project/fs-blog/web/node_modules/.4.13.4@express/lib/router/index.js:271:10)
+    at Layer.handle_error (/Users/codingbro/web/Project/fs-blog/web/node_modules/.4.13.4@express/lib/router/layer.js:67:12)
+    at trim_prefix (/Users/codingbro/web/Project/fs-blog/web/node_modules/.4.13.4@express/lib/router/index.js:310:13)
+    at /Users/codingbro/web/Project/fs-blog/web/node_modules/.4.13.4@express/lib/router/index.js:280:7
+    at Function.process_params (/Users/codingbro/web/Project/fs-blog/web/node_modules/.4.13.4@express/lib/router/index.js:330:12)
+    at Immediate.next (/Users/codingbro/web/Project/fs-blog/web/node_modules/.4.13.4@express/lib/router/index.js:271:10)
+    at Immediate.<anonymous> (/Users/codingbro/web/Project/fs-blog/web/node_modules/.4.13.4@express/lib/router/index.js:618:15)
+    at Immediate.immediate._onImmediate (timers.js:572:18)
+    at tryOnImmediate (timers.js:534:15)
+    at processImmediate [as _immediateCallback] (timers.js:514:5)
+[2017-05-24 16:09:10.688] [ERROR] system - [TypeError: Cannot read property 'user' of null]
+TypeError: Cannot read property 'user' of null
+    at /Users/codingbro/web/Project/fs-blog/web/libs/passport.js:38:23
+    at process._tickCallback (internal/process/next_tick.js:103:7)
+[2017-05-24 16:09:10.709] [ERROR] console - Error: Can't set headers after they are sent.
+    at ServerResponse.OutgoingMessage.setHeader (_http_outgoing.js:346:11)
+    at ServerResponse.header (/Users/codingbro/web/Project/fs-blog/web/node_modules/.4.13.4@express/lib/response.js:718:10)
+    at ServerResponse.json (/Users/codingbro/web/Project/fs-blog/web/node_modules/.4.13.4@express/lib/response.js:246:10)
+    at exports.notFound.exports.error (/Users/codingbro/web/Project/fs-blog/web/controllers/error.js:13:28)
+    at Layer.handle_error (/Users/codingbro/web/Project/fs-blog/web/node_modules/.4.13.4@express/lib/router/layer.js:71:5)
+    at trim_prefix (/Users/codingbro/web/Project/fs-blog/web/node_modules/.4.13.4@express/lib/router/index.js:310:13)
+    at /Users/codingbro/web/Project/fs-blog/web/node_modules/.4.13.4@express/lib/router/index.js:280:7
+    at Function.process_params (/Users/codingbro/web/Project/fs-blog/web/node_modules/.4.13.4@express/lib/router/index.js:330:12)
+    at next (/Users/codingbro/web/Project/fs-blog/web/node_modules/.4.13.4@express/lib/router/index.js:271:10)
+    at Layer.handle_error (/Users/codingbro/web/Project/fs-blog/web/node_modules/.4.13.4@express/lib/router/layer.js:67:12)
+    at trim_prefix (/Users/codingbro/web/Project/fs-blog/web/node_modules/.4.13.4@express/lib/router/index.js:310:13)
+    at /Users/codingbro/web/Project/fs-blog/web/node_modules/.4.13.4@express/lib/router/index.js:280:7
+    at Function.process_params (/Users/codingbro/web/Project/fs-blog/web/node_modules/.4.13.4@express/lib/router/index.js:330:12)
+    at Immediate.next (/Users/codingbro/web/Project/fs-blog/web/node_modules/.4.13.4@express/lib/router/index.js:271:10)
+    at Immediate.<anonymous> (/Users/codingbro/web/Project/fs-blog/web/node_modules/.4.13.4@express/lib/router/index.js:618:15)
+    at Immediate.immediate._onImmediate (timers.js:572:18)
+    at tryOnImmediate (timers.js:534:15)
+    at processImmediate [as _immediateCallback] (timers.js:514:5)
+[2017-05-24 16:09:10.739] [ERROR] system - [TypeError: Cannot read property 'user' of null]
+TypeError: Cannot read property 'user' of null
+    at /Users/codingbro/web/Project/fs-blog/web/libs/passport.js:38:23
+    at process._tickCallback (internal/process/next_tick.js:103:7)
+[2017-05-24 16:09:10.744] [ERROR] access - GET /api/v1/user
+[2017-05-24 16:09:10.747] [ERROR] console - Error: Can't set headers after they are sent.
+    at ServerResponse.OutgoingMessage.setHeader (_http_outgoing.js:346:11)
+    at ServerResponse.header (/Users/codingbro/web/Project/fs-blog/web/node_modules/.4.13.4@express/lib/response.js:718:10)
+    at ServerResponse.json (/Users/codingbro/web/Project/fs-blog/web/node_modules/.4.13.4@express/lib/response.js:246:10)
+    at exports.notFound.exports.error (/Users/codingbro/web/Project/fs-blog/web/controllers/error.js:13:28)
+    at Layer.handle_error (/Users/codingbro/web/Project/fs-blog/web/node_modules/.4.13.4@express/lib/router/layer.js:71:5)
+    at trim_prefix (/Users/codingbro/web/Project/fs-blog/web/node_modules/.4.13.4@express/lib/router/index.js:310:13)
+    at /Users/codingbro/web/Project/fs-blog/web/node_modules/.4.13.4@express/lib/router/index.js:280:7
+    at Function.process_params (/Users/codingbro/web/Project/fs-blog/web/node_modules/.4.13.4@express/lib/router/index.js:330:12)
+    at next (/Users/codingbro/web/Project/fs-blog/web/node_modules/.4.13.4@express/lib/router/index.js:271:10)
+    at Layer.handle_error (/Users/codingbro/web/Project/fs-blog/web/node_modules/.4.13.4@express/lib/router/layer.js:67:12)
+    at trim_prefix (/Users/codingbro/web/Project/fs-blog/web/node_modules/.4.13.4@express/lib/router/index.js:310:13)
+    at /Users/codingbro/web/Project/fs-blog/web/node_modules/.4.13.4@express/lib/router/index.js:280:7
+    at Function.process_params (/Users/codingbro/web/Project/fs-blog/web/node_modules/.4.13.4@express/lib/router/index.js:330:12)
+    at Immediate.next (/Users/codingbro/web/Project/fs-blog/web/node_modules/.4.13.4@express/lib/router/index.js:271:10)
+    at Immediate.<anonymous> (/Users/codingbro/web/Project/fs-blog/web/node_modules/.4.13.4@express/lib/router/index.js:618:15)
+    at Immediate.immediate._onImmediate (timers.js:572:18)
+    at tryOnImmediate (timers.js:534:15)
+    at processImmediate [as _immediateCallback] (timers.js:514:5)
+[2017-05-24 16:14:12.078] [ERROR] system - { [Error: Not found!] status: 400 }
+Error: Not found!
+    at exports.notFound (/Users/codingbro/web/Project/fs-blog/web/controllers/error.js:4:15)
+    at Layer.handle [as handle_request] (/Users/codingbro/web/Project/fs-blog/web/node_modules/.4.13.4@express/lib/router/layer.js:95:5)
+    at trim_prefix (/Users/codingbro/web/Project/fs-blog/web/node_modules/.4.13.4@express/lib/router/index.js:312:13)
+    at /Users/codingbro/web/Project/fs-blog/web/node_modules/.4.13.4@express/lib/router/index.js:280:7
+    at Function.process_params (/Users/codingbro/web/Project/fs-blog/web/node_modules/.4.13.4@express/lib/router/index.js:330:12)
+    at Immediate.next (/Users/codingbro/web/Project/fs-blog/web/node_modules/.4.13.4@express/lib/router/index.js:271:10)
+    at Immediate.<anonymous> (/Users/codingbro/web/Project/fs-blog/web/node_modules/.4.13.4@express/lib/router/index.js:618:15)
+    at Immediate.immediate._onImmediate (timers.js:572:18)
+    at tryOnImmediate (timers.js:534:15)
+    at processImmediate [as _immediateCallback] (timers.js:514:5)
+[2017-05-24 16:14:12.084] [ERROR] access - GET /api/v1/archive?
+[2017-05-24 16:14:32.384] [ERROR] system - { [Error: Not found!] status: 400 }
+Error: Not found!
+    at exports.notFound (/Users/codingbro/web/Project/fs-blog/web/controllers/error.js:4:15)
+    at Layer.handle [as handle_request] (/Users/codingbro/web/Project/fs-blog/web/node_modules/.4.13.4@express/lib/router/layer.js:95:5)
+    at trim_prefix (/Users/codingbro/web/Project/fs-blog/web/node_modules/.4.13.4@express/lib/router/index.js:312:13)
+    at /Users/codingbro/web/Project/fs-blog/web/node_modules/.4.13.4@express/lib/router/index.js:280:7
+    at Function.process_params (/Users/codingbro/web/Project/fs-blog/web/node_modules/.4.13.4@express/lib/router/index.js:330:12)
+    at Immediate.next (/Users/codingbro/web/Project/fs-blog/web/node_modules/.4.13.4@express/lib/router/index.js:271:10)
+    at Immediate.<anonymous> (/Users/codingbro/web/Project/fs-blog/web/node_modules/.4.13.4@express/lib/router/index.js:618:15)
+    at Immediate.immediate._onImmediate (timers.js:572:18)
+    at tryOnImmediate (timers.js:534:15)
+    at processImmediate [as _immediateCallback] (timers.js:514:5)
+[2017-05-24 16:14:32.391] [ERROR] access - GET /api/v1/archive?
+[2017-05-24 16:52:39.038] [ERROR] system - { [Error: Trying to open unclosed connection.] state: 2 }
+Error: Trying to open unclosed connection.
+    at NativeConnection.Connection.open (/Users/codingbro/web/Project/fs-blog/web/node_modules/.4.9.0@mongoose/lib/connection.js:237:15)
+    at Mongoose.connect (/Users/codingbro/web/Project/fs-blog/web/node_modules/.4.9.0@mongoose/lib/index.js:242:47)
+    at _connect (/Users/codingbro/web/Project/fs-blog/web/libs/database.js:45:21)
+    at process._tickCallback (internal/process/next_tick.js:103:7)
+[2017-05-24 16:52:39.141] [ERROR] access - GET /api/v1/archive?
+[2017-05-24 16:52:57.732] [ERROR] system - { [Error: Not found!] status: 400 }
+Error: Not found!
+    at exports.notFound (/Users/codingbro/web/Project/fs-blog/web/controllers/error.js:4:15)
+    at Layer.handle [as handle_request] (/Users/codingbro/web/Project/fs-blog/web/node_modules/.4.13.4@express/lib/router/layer.js:95:5)
+    at trim_prefix (/Users/codingbro/web/Project/fs-blog/web/node_modules/.4.13.4@express/lib/router/index.js:312:13)
+    at /Users/codingbro/web/Project/fs-blog/web/node_modules/.4.13.4@express/lib/router/index.js:280:7
+    at Function.process_params (/Users/codingbro/web/Project/fs-blog/web/node_modules/.4.13.4@express/lib/router/index.js:330:12)
+    at Immediate.next (/Users/codingbro/web/Project/fs-blog/web/node_modules/.4.13.4@express/lib/router/index.js:271:10)
+    at Immediate.<anonymous> (/Users/codingbro/web/Project/fs-blog/web/node_modules/.4.13.4@express/lib/router/index.js:618:15)
+    at Immediate.immediate._onImmediate (timers.js:572:18)
+    at tryOnImmediate (timers.js:534:15)
+    at processImmediate [as _immediateCallback] (timers.js:514:5)
+[2017-05-24 16:52:57.746] [ERROR] access - GET /api/v1/archive?
+[2017-05-24 16:55:37.818] [ERROR] database - { [TypeError: moment(...).starOf is not a function] type: 'database' }
+TypeError: moment(...).starOf is not a function
+    at _createTimeline (/Users/codingbro/web/Project/fs-blog/web/controllers/timeline.js:41:26)
+    at /Users/codingbro/web/Project/fs-blog/web/controllers/timeline.js:32:9
+    at Object.exports.query.Timeline.find.then.exports.create.exports.autoCreate.data [as autoCreate] (/Users/codingbro/web/Project/fs-blog/web/controllers/timeline.js:31:12)
+    at /Users/codingbro/web/Project/fs-blog/web/controllers/article.js:69:26
+    at tryCatcher (/Users/codingbro/web/Project/fs-blog/web/node_modules/.3.5.0@bluebird/js/release/util.js:16:23)
+    at Promise._settlePromiseFromHandler (/Users/codingbro/web/Project/fs-blog/web/node_modules/.3.5.0@bluebird/js/release/promise.js:512:31)
+    at Promise._settlePromise (/Users/codingbro/web/Project/fs-blog/web/node_modules/.3.5.0@bluebird/js/release/promise.js:569:18)
+    at Promise._settlePromise0 (/Users/codingbro/web/Project/fs-blog/web/node_modules/.3.5.0@bluebird/js/release/promise.js:614:10)
+    at Promise._settlePromises (/Users/codingbro/web/Project/fs-blog/web/node_modules/.3.5.0@bluebird/js/release/promise.js:693:18)
+    at Async._drainQueue (/Users/codingbro/web/Project/fs-blog/web/node_modules/.3.5.0@bluebird/js/release/async.js:133:16)
+    at Async._drainQueues (/Users/codingbro/web/Project/fs-blog/web/node_modules/.3.5.0@bluebird/js/release/async.js:143:10)
+    at Immediate.Async.drainQueues [as _onImmediate] (/Users/codingbro/web/Project/fs-blog/web/node_modules/.3.5.0@bluebird/js/release/async.js:17:14)
+    at tryOnImmediate (timers.js:534:15)
+    at processImmediate [as _immediateCallback] (timers.js:514:5)
+[2017-05-24 16:55:37.842] [ERROR] access - POST /api/v1/article
+[2017-05-24 17:06:26.621] [ERROR] database - { [TypeError: moment(...).starOf is not a function] type: 'database' }
+TypeError: moment(...).starOf is not a function
+    at _createTimeline (/Users/codingbro/web/Project/fs-blog/web/controllers/timeline.js:41:26)
+    at /Users/codingbro/web/Project/fs-blog/web/controllers/timeline.js:32:9
+    at Object.exports.query.Timeline.find.then.exports.create.exports.autoCreate.data [as autoCreate] (/Users/codingbro/web/Project/fs-blog/web/controllers/timeline.js:31:12)
+    at /Users/codingbro/web/Project/fs-blog/web/controllers/article.js:69:26
+    at tryCatcher (/Users/codingbro/web/Project/fs-blog/web/node_modules/.3.5.0@bluebird/js/release/util.js:16:23)
+    at Promise._settlePromiseFromHandler (/Users/codingbro/web/Project/fs-blog/web/node_modules/.3.5.0@bluebird/js/release/promise.js:512:31)
+    at Promise._settlePromise (/Users/codingbro/web/Project/fs-blog/web/node_modules/.3.5.0@bluebird/js/release/promise.js:569:18)
+    at Promise._settlePromise0 (/Users/codingbro/web/Project/fs-blog/web/node_modules/.3.5.0@bluebird/js/release/promise.js:614:10)
+    at Promise._settlePromises (/Users/codingbro/web/Project/fs-blog/web/node_modules/.3.5.0@bluebird/js/release/promise.js:693:18)
+    at Async._drainQueue (/Users/codingbro/web/Project/fs-blog/web/node_modules/.3.5.0@bluebird/js/release/async.js:133:16)
+    at Async._drainQueues (/Users/codingbro/web/Project/fs-blog/web/node_modules/.3.5.0@bluebird/js/release/async.js:143:10)
+    at Immediate.Async.drainQueues [as _onImmediate] (/Users/codingbro/web/Project/fs-blog/web/node_modules/.3.5.0@bluebird/js/release/async.js:17:14)
+    at tryOnImmediate (timers.js:534:15)
+    at processImmediate [as _immediateCallback] (timers.js:514:5)
+[2017-05-24 17:06:26.641] [ERROR] access - POST /api/v1/article
+[2017-05-24 17:34:28.819] [ERROR] system - { [Error: Not found!] status: 400 }
+Error: Not found!
+    at exports.notFound (/Users/codingbro/web/Project/fs-blog/web/controllers/error.js:4:15)
+    at Layer.handle [as handle_request] (/Users/codingbro/web/Project/fs-blog/web/node_modules/.4.13.4@express/lib/router/layer.js:95:5)
+    at trim_prefix (/Users/codingbro/web/Project/fs-blog/web/node_modules/.4.13.4@express/lib/router/index.js:312:13)
+    at /Users/codingbro/web/Project/fs-blog/web/node_modules/.4.13.4@express/lib/router/index.js:280:7
+    at Function.process_params (/Users/codingbro/web/Project/fs-blog/web/node_modules/.4.13.4@express/lib/router/index.js:330:12)
+    at Immediate.next (/Users/codingbro/web/Project/fs-blog/web/node_modules/.4.13.4@express/lib/router/index.js:271:10)
+    at Immediate.<anonymous> (/Users/codingbro/web/Project/fs-blog/web/node_modules/.4.13.4@express/lib/router/index.js:618:15)
+    at Immediate.immediate._onImmediate (timers.js:572:18)
+    at tryOnImmediate (timers.js:534:15)
+    at processImmediate [as _immediateCallback] (timers.js:514:5)
+[2017-05-24 17:34:28.834] [ERROR] access - GET /api/v1/archive?
+[2017-05-24 17:34:32.218] [ERROR] system - { [Error: Not found!] status: 400 }
+Error: Not found!
+    at exports.notFound (/Users/codingbro/web/Project/fs-blog/web/controllers/error.js:4:15)
+    at Layer.handle [as handle_request] (/Users/codingbro/web/Project/fs-blog/web/node_modules/.4.13.4@express/lib/router/layer.js:95:5)
+    at trim_prefix (/Users/codingbro/web/Project/fs-blog/web/node_modules/.4.13.4@express/lib/router/index.js:312:13)
+    at /Users/codingbro/web/Project/fs-blog/web/node_modules/.4.13.4@express/lib/router/index.js:280:7
+    at Function.process_params (/Users/codingbro/web/Project/fs-blog/web/node_modules/.4.13.4@express/lib/router/index.js:330:12)
+    at Immediate.next (/Users/codingbro/web/Project/fs-blog/web/node_modules/.4.13.4@express/lib/router/index.js:271:10)
+    at Immediate.<anonymous> (/Users/codingbro/web/Project/fs-blog/web/node_modules/.4.13.4@express/lib/router/index.js:618:15)
+    at Immediate.immediate._onImmediate (timers.js:572:18)
+    at tryOnImmediate (timers.js:534:15)
+    at processImmediate [as _immediateCallback] (timers.js:514:5)
+[2017-05-24 17:34:32.232] [ERROR] access - GET /api/v1/archive?
+[2017-05-24 17:35:59.943] [ERROR] system - { [Error: Trying to open unclosed connection.] state: 2 }
+Error: Trying to open unclosed connection.
+    at NativeConnection.Connection.open (/Users/codingbro/web/Project/fs-blog/web/node_modules/.4.9.0@mongoose/lib/connection.js:237:15)
+    at Mongoose.connect (/Users/codingbro/web/Project/fs-blog/web/node_modules/.4.9.0@mongoose/lib/index.js:242:47)
+    at _connect (/Users/codingbro/web/Project/fs-blog/web/libs/database.js:45:21)
+    at process._tickCallback (internal/process/next_tick.js:103:7)
+[2017-05-24 17:36:00.025] [ERROR] access - GET /api/v1/archive?
+[2017-05-24 17:38:39.861] [ERROR] system - { [Error: Trying to open unclosed connection.] state: 2 }
+Error: Trying to open unclosed connection.
+    at NativeConnection.Connection.open (/Users/codingbro/web/Project/fs-blog/web/node_modules/.4.9.0@mongoose/lib/connection.js:237:15)
+    at Mongoose.connect (/Users/codingbro/web/Project/fs-blog/web/node_modules/.4.9.0@mongoose/lib/index.js:242:47)
+    at _connect (/Users/codingbro/web/Project/fs-blog/web/libs/database.js:45:21)
+    at process._tickCallback (internal/process/next_tick.js:103:7)
+[2017-05-24 17:38:39.917] [ERROR] access - GET /api/v1/archive?
+[2017-05-24 17:39:03.252] [ERROR] system - { [Error: Not found!] status: 400 }
+Error: Not found!
+    at exports.notFound (/Users/codingbro/web/Project/fs-blog/web/controllers/error.js:4:15)
+    at Layer.handle [as handle_request] (/Users/codingbro/web/Project/fs-blog/web/node_modules/.4.13.4@express/lib/router/layer.js:95:5)
+    at trim_prefix (/Users/codingbro/web/Project/fs-blog/web/node_modules/.4.13.4@express/lib/router/index.js:312:13)
+    at /Users/codingbro/web/Project/fs-blog/web/node_modules/.4.13.4@express/lib/router/index.js:280:7
+    at Function.process_params (/Users/codingbro/web/Project/fs-blog/web/node_modules/.4.13.4@express/lib/router/index.js:330:12)
+    at Immediate.next (/Users/codingbro/web/Project/fs-blog/web/node_modules/.4.13.4@express/lib/router/index.js:271:10)
+    at Immediate.<anonymous> (/Users/codingbro/web/Project/fs-blog/web/node_modules/.4.13.4@express/lib/router/index.js:618:15)
+    at Immediate.immediate._onImmediate (timers.js:572:18)
+    at tryOnImmediate (timers.js:534:15)
+    at processImmediate [as _immediateCallback] (timers.js:514:5)
+[2017-05-24 17:39:03.262] [ERROR] access - GET /api/v1/archive?
+[2017-05-24 17:41:35.248] [ERROR] system - { [Error: Trying to open unclosed connection.] state: 2 }
+Error: Trying to open unclosed connection.
+    at NativeConnection.Connection.open (/Users/codingbro/web/Project/fs-blog/web/node_modules/.4.9.0@mongoose/lib/connection.js:237:15)
+    at Mongoose.connect (/Users/codingbro/web/Project/fs-blog/web/node_modules/.4.9.0@mongoose/lib/index.js:242:47)
+    at _connect (/Users/codingbro/web/Project/fs-blog/web/libs/database.js:45:21)
+    at process._tickCallback (internal/process/next_tick.js:103:7)
+[2017-05-24 17:41:35.310] [ERROR] access - GET /api/v1/archive?
+[2017-05-24 17:42:43.019] [ERROR] system - [TypeError: docs.toObject is not a function]
+TypeError: docs.toObject is not a function
+    at /Users/codingbro/web/Project/fs-blog/web/controllers/timeline.js:12:46
+    at process._tickCallback (internal/process/next_tick.js:103:7)
+[2017-05-24 17:42:43.032] [ERROR] access - GET /api/v1/timeline?
+[2017-05-24 17:43:15.951] [ERROR] system - { [Error: Trying to open unclosed connection.] state: 2 }
+Error: Trying to open unclosed connection.
+    at NativeConnection.Connection.open (/Users/codingbro/web/Project/fs-blog/web/node_modules/.4.9.0@mongoose/lib/connection.js:237:15)
+    at Mongoose.connect (/Users/codingbro/web/Project/fs-blog/web/node_modules/.4.9.0@mongoose/lib/index.js:242:47)
+    at _connect (/Users/codingbro/web/Project/fs-blog/web/libs/database.js:45:21)
+    at process._tickCallback (internal/process/next_tick.js:103:7)
+[2017-05-24 17:43:16.012] [ERROR] access - GET /api/v1/timeline?
+[2017-05-24 18:18:06.722] [ERROR] system - { [Error: Trying to open unclosed connection.] state: 2 }
+Error: Trying to open unclosed connection.
+    at NativeConnection.Connection.open (/Users/codingbro/web/Project/fs-blog/web/node_modules/.4.9.0@mongoose/lib/connection.js:237:15)
+    at Mongoose.connect (/Users/codingbro/web/Project/fs-blog/web/node_modules/.4.9.0@mongoose/lib/index.js:242:47)
+    at _connect (/Users/codingbro/web/Project/fs-blog/web/libs/database.js:45:21)
+    at process._tickCallback (internal/process/next_tick.js:103:7)
+[2017-05-24 18:18:06.780] [ERROR] access - GET /api/v1/timeline?
+[2017-05-24 19:03:34.500] [ERROR] system - { [Error: Trying to open unclosed connection.] state: 2 }
+Error: Trying to open unclosed connection.
+    at NativeConnection.Connection.open (/Users/codingbro/web/Project/fs-blog/web/node_modules/.4.9.0@mongoose/lib/connection.js:237:15)
+    at Mongoose.connect (/Users/codingbro/web/Project/fs-blog/web/node_modules/.4.9.0@mongoose/lib/index.js:242:47)
+    at _connect (/Users/codingbro/web/Project/fs-blog/web/libs/database.js:45:21)
+    at process._tickCallback (internal/process/next_tick.js:103:7)
+[2017-05-24 19:03:34.548] [ERROR] access - GET /api/v1/timeline?

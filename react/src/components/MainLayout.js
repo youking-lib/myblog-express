@@ -13,7 +13,7 @@ const HeaderRight = () => {
     return (
         <div>
             <Link style={{marginRight: 16}} to="/admin">Admin</Link>
-            <Link to="/logout"><Icon type="logout" /></Link>
+            <Link to="/logout" style={{color: 'red'}}><Icon type="logout" /></Link>
         </div>
         )
 }

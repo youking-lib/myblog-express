@@ -15,6 +15,7 @@ import Admin from './routes/Admin/Admin'
 import AdminArticleList from './routes/Admin/ArticleList'
 import AdminAddArticle from './routes/Admin/Add'
 import AdminKeyword from './routes/Admin/keyword'
+import AdminCarousel from './routes/Admin/Carousel'
 
 export default function({ history, app }) {
 
@@ -56,20 +57,52 @@ export default function({ history, app }) {
 		})
 	}
 
+	function requireDraftPrepared({params}, replace, next) {
+		store.dispatch({
+			type: 'article/requireDraftPrepared',
+			payload: params,
+			next
+		})
+	}
+
+	function requirePreviewPrepared({params}, replace, next) {
+		store.dispatch({
+			type: 'article/requirePreviewPrepared',
+			payload: params,
+			next
+		})	
+	}
+
+	function parallelPictureWall(nextState, replace, next) {
+		store.dispatch({
+			type: 'media/queryPictureWall',
+			next
+		})
+	}
+
+	function lazyloadTimeline(nextState, replace, next) {
+		store.dispatch({
+			type: 'archive/lazyloadTimeline'
+		})
+		next()
+	}
+
 	return (
 		<Router history={history}>
 			<Route path="/logout" component={Home} onEnter={handleLogout} />
 			<Route path="/admin" component={Admin} onEnter={requireAdmin}>
 				<IndexRedirect to="article" />
 				<Route path="article" component={AdminArticleList} onEnter={requireArticles} />
+				<Route path="add/:_id" component={AdminAddArticle} onEnter={requireDraftPrepared} />
 				<Route path="add" component={AdminAddArticle} onEnter={requireKeywords} />
 				<Route path="keyword" component={AdminKeyword} onEnter={requireKeywords} />
+				<Route path="carousel" component={AdminCarousel} onEnter={parallelPictureWall} />
 			</Route>
 			<Route path="/" component={Home} onEnter={autoLogin} >
 				<IndexRedirect to="posts" />
-				<Route path="posts" component={Posts} />
-				<Route path="article/:id" component={Article} isUsercardHidden={true} />
-				<Route path="archive" component={Archive} />
+				<Route path="posts" component={Posts} onEnter={requireArticles} />
+				<Route path="article/:_id" component={Article} isUsercardHidden={true} onEnter={requirePreviewPrepared} />
+				<Route path="archive" component={Archive} onEnter={lazyloadTimeline} />
 				<Route path="about" component={About} />
 				<Route path="resume" component={Resume} />
 			</Route>

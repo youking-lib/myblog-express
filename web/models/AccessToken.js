@@ -7,12 +7,12 @@ var AccessToken = new mongoose.Schema({
     token: {
         type: String,
         unique: true,
-        require: true
+        required: true
     },
     user: {
         type: ObjectId,
         unique: true,
-        require: true,
+        required: true,
         ref: 'Users'
     },
     createAt: {
