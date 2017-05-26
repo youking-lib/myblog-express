@@ -1,7 +1,7 @@
+var path = require('path')
 /**
  * 首页
  */
 exports.index = function(req, res){
-    res.render('index', {title: 'this is express'})
+    res.sendFile(path.resolve(__dirname, '../public/assets/index.html'))
 }
-

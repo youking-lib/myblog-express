@@ -13,6 +13,12 @@ module.exports = function(webpackConfig, env) {
     "style": true
   }])
 
+  webpackConfig.plugins.push(new HTMLWebpackPlugin({
+    template: 'index.ejs',
+    title: 'fsblog',
+    inject: true
+  }))
+
   webpackConfig.resolve.alias = webpackConfig.resolve.alias || {}
   webpackConfig.resolve.alias.components = path.join(__dirname, './src/components')
 
@@ -49,15 +55,6 @@ module.exports = function(webpackConfig, env) {
       loader.test = /\.css$/;
     }
   });
-
-
-  webpackConfig.plugins.push(new HTMLWebpackPlugin({
-    template: 'index.ejs',
-    title: 'fsblog',
-    inject: true
-  }))
-
-  console.log(webpackConfig.output)
-
+  
   return webpackConfig;
 };

@@ -2,3 +2,13 @@
 [2017-05-25 17:20:09.415] [WARN] access - GET /api/v1/timeline?
 [2017-05-25 17:20:09.919] [WARN] access - GET /api/v1/article?
 [2017-05-25 17:20:10.574] [WARN] access - GET /api/v1/timeline?
+[2017-05-25 17:53:52.448] [ERROR] access - GET /
+[2017-05-25 17:53:52.687] [ERROR] access - GET /favicon.ico
+[2017-05-25 17:54:40.478] [INFO] access - GET /
+[2017-05-25 17:54:40.550] [ERROR] access - GET /index.css
+[2017-05-25 17:54:40.634] [ERROR] access - GET /favicon.ico
+[2017-05-25 17:54:42.330] [WARN] access - GET /
+[2017-05-25 17:54:42.390] [ERROR] access - GET /index.css
+[2017-05-25 17:54:42.393] [ERROR] access - GET /index.js
+[2017-05-25 17:54:42.445] [ERROR] access - GET /favicon.ico
+[2017-05-25 17:54:45.065] [ERROR] access - GET /index.css
