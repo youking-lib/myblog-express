@@ -1,4 +1,4 @@
-var Article = require('../models/article'),
+var Article = require('../models/Article'),
     Timeline = require('./timeline'),
     async = require('async')
 
