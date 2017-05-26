@@ -18,6 +18,7 @@
             "port": "24024",
             "path": "/home/whistleyz/temp/production",
             "ssh_options": "StrictHostKeyChecking=no",
+            "post-deploy" : "npm install",
             "env": {
                 "NODE_ENV": "production"
             }
