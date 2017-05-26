@@ -1,6 +1,6 @@
 dist
 node_modules
 .DS_Store
-public
+upload
 npm-debug.log
 logs/
