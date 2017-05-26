@@ -1,7 +1,6 @@
 {
     "apps": [{
         "script": "./web/bin/www",
-        "instances": 0,
         "exec_mode": "cluster",
         "env": {
             "NODE_ENV": "development"
@@ -9,5 +8,19 @@
         "env_production" : {
             "NODE_ENV": "production"
         }
-    }]
+    }],
+    "deploy": {
+        "production": {
+            "user": "whistleyz",
+            "host": ["59.110.232.208"],
+            "ref": "origin/master",
+            "repo": "git@github.com:whistleyz/myblog.git",
+            "port": "24024",
+            "path": "~/temp/production",
+            "ssh_options": "StrictHostKeyChecking=no",
+            "env": {
+                "NODE_ENV": "production"
+            }
+        }
+    }
 }
