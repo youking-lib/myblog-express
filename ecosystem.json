@@ -7,7 +7,6 @@
         },
         "env_production" : {
             "NODE_ENV": "production",
-            "PORT": "8080"
         }
     }],
     "deploy": {
@@ -21,7 +20,8 @@
             "ssh_options": "StrictHostKeyChecking=no",
             "post-deploy" : "cnpm install",
             "env": {
-                "NODE_ENV": "production"
+                "NODE_ENV": "production",
+                "PORT": "8080"
             }
         }
     }

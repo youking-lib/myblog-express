@@ -3,7 +3,8 @@
   "version": "0.0.1",
   "private": true,
   "scripts": {
-    "start": "node ./web/bin/www"
+    "start": "node ./web/bin/www",
+    "deploy": "pm2 deploy ecosystem.json production"
   },
   "dependencies": {
     "async": "^2.4.0",
