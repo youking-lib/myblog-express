@@ -7,17 +7,27 @@ module.exports = function(webpackConfig, env) {
   webpackConfig.output.publicPath = '/public/assets/'
   webpackConfig.output.filename = '[name]-[hash].js'
 
+
+  webpackConfig.module.loaders.push({
+    test: /\.ejs$/,
+    loader: 'ejs-loader'
+  })
+
+  // 分离静态资源
+  webpackConfig.externals = webpackConfig.externals || {}
+  webpackConfig.externals.React = 'React'
+
   webpackConfig.babel.plugins.push('transform-runtime');
   webpackConfig.babel.plugins.push(['import', {
     "libraryName": "antd",
     "style": true
   }])
-
-  webpackConfig.plugins.push(new HTMLWebpackPlugin({
-    template: 'index.ejs',
-    title: 'fsblog',
-    inject: true
+ 
+  webpackConfig.plugins.unshift(new HTMLWebpackPlugin({
+    template: './index.ejs',
+    inject: true,
   }))
+
 
   webpackConfig.resolve.alias = webpackConfig.resolve.alias || {}
   webpackConfig.resolve.alias.components = path.join(__dirname, './src/components')

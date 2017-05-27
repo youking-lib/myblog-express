@@ -7,6 +7,7 @@ exports.query = (req, res, next) => {
     
     Timeline
         .find(_query)
+        .sort('-date')
         .then(docs => {
             res.status(200).json({data: docs})
         })

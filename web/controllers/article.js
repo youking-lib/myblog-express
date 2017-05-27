@@ -10,6 +10,7 @@ exports.list = (req, res, next) => {
 
     Article
         .find(query)
+        .sort('-meta.createAt')
         .populate('keywords')
         .lean()
         .then(docs => {
