@@ -1,21 +1,19 @@
 var mongoose = require('mongoose'),
-    config = require('../config/database')
+    config = require('../config/database'),
+    logger = require('./logger')
+
 
 mongoose.Promise = global.Promise
 
 var hasConnected = false
 
 exports.init = () => {
-    return (req, res, next) => {
-        if (hasConnected) {
-            return next()
-        }
-        _test()
-            .then(_connect)
-            .then(() => { hasConnected = true;
-                next() })
-            .catch((err) => { next(err) })
-    }
+    _test()
+        .then(() => _connect())
+        .then(() => console.log('Success to connect to mongodb.'))
+        .catch(err => {
+            database.database().error('Failed to connect to mongodb: \n' + err.message)
+        })
 }
 
 /**
@@ -36,7 +34,7 @@ function _test() {
             db.close()
         })
         .catch((err) => {
-            err.type = 'system'
+            err.type = 'database'
             return Promise.reject(err)
         })
 }

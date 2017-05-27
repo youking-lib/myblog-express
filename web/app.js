@@ -14,6 +14,7 @@ var express = require('express'),
 var routes = require('./routes/index')
 
 var app = express()
+database.init()
 
 app.set('views', path.join(__dirname, 'views'))
 app.set('view engine', 'ejs')
@@ -21,7 +22,6 @@ app.set('view engine', 'ejs')
 // uncomment after placing your favicon in /public
 app.use(favicon(path.join(__dirname, 'public', 'favicon.ico')))
 app.use(logger.access())
-app.use(database.init())
 
 app.enable('trust proxy')
 app.use(bodyParser.json({limit: "100000kb"}))
