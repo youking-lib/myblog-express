@@ -29,7 +29,7 @@ exports.connect = _connect
 function _test() {
     var db = mongoose.createConnection()
 
-    return db.open(config.host, db.database, db.port, db.options)
+    return db.open(config.host, config.database, config.port, config.options)
         .then(() => {
             db.close()
         })
