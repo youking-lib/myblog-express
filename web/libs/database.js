@@ -12,7 +12,7 @@ exports.init = () => {
         .then(() => _connect())
         .then(() => console.log('Success to connect to mongodb.'))
         .catch(err => {
-            database.database().error('Failed to connect to mongodb: \n' + err.message)
+            logger.database().error('Failed to connect to mongodb: \n' + err.message)
         })
 }
 
