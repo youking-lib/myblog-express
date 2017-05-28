@@ -1,12 +1,16 @@
 const webpack = require('atool-build/lib/webpack')
 const path = require('path')
 const HTMLWebpackPlugin = require('html-webpack-plugin')
+const HtmlWebpackHarddiskPlugin = require('html-webpack-harddisk-plugin')
 
 module.exports = function(webpackConfig, env) {
   webpackConfig.output.path = path.join(__dirname, '../web/public/assets')
   webpackConfig.output.publicPath = '/public/assets/'
   webpackConfig.output.filename = '[name]-[hash].js'
 
+  if (env === 'development') {
+    webpackConfig.output.path = path.join(__dirname, './dist/')  
+  }
 
   webpackConfig.module.loaders.push({
     test: /\.ejs$/,
@@ -15,7 +19,9 @@ module.exports = function(webpackConfig, env) {
 
   // 分离静态资源
   webpackConfig.externals = webpackConfig.externals || {}
-  webpackConfig.externals.React = 'React'
+  webpackConfig.externals['react'] = 'React'
+  webpackConfig.externals['react-dom'] = 'ReactDOM'
+  webpackConfig.externals['antd'] = 'ReactDOM'
 
   webpackConfig.babel.plugins.push('transform-runtime');
   webpackConfig.babel.plugins.push(['import', {
@@ -23,11 +29,14 @@ module.exports = function(webpackConfig, env) {
     "style": true
   }])
  
+  webpackConfig.plugins.unshift(new HtmlWebpackHarddiskPlugin())
   webpackConfig.plugins.unshift(new HTMLWebpackPlugin({
-    template: './index.ejs',
     inject: true,
+    title: 'fsblog webpack react',
+    alwaysWriteToDisk: true,
+    filename: 'index.html',
+    template: './src/index.ejs',
   }))
-
 
   webpackConfig.resolve.alias = webpackConfig.resolve.alias || {}
   webpackConfig.resolve.alias.components = path.join(__dirname, './src/components')
