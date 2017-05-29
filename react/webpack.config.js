@@ -16,7 +16,7 @@ module.exports = function(webpackConfig, env) {
     test: /\.ejs$/,
     loader: 'ejs-loader'
   })
-
+  console.log(1)
   // 分离静态资源
   webpackConfig.externals = webpackConfig.externals || {}
   webpackConfig.externals['react'] = 'React'
