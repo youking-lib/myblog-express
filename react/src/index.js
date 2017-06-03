@@ -3,6 +3,7 @@ import dva from 'dva'
 import createLoading from 'dva-loading'
 
 import fetch from 'dva/fetch'
+import AppModel from './models/app'
 
 // 1. Initialize
 const app = dva()
@@ -12,6 +13,7 @@ app.use(createLoading({effects: true}))
 
 // 3. Model
 //app.model(require('./models/example'))
+console.log(require('./models/app'))
 app.model(require('./models/app'))
 app.model(require('./models/article'))
 app.model(require('./models/keyword'))
