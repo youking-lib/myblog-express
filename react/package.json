@@ -37,6 +37,7 @@
     "babel-preset-react": "^6.24.1",
     "babel-preset-stage-0": "^6.24.1",
     "babel-runtime": "^6.9.2",
+    "chalk": "^1.1.3",
     "connect-history-api-fallback": "^1.3.0",
     "css-loader": "^0.28.3",
     "dora": "^0.4.3",
@@ -72,6 +73,7 @@
   "scripts": {
     "_start": "dora --plugins \"proxy?watchDirs=./mock,webpack,webpack-hmr\"",
     "_build": "atool-build",
+    "build": "node ./build/build.js",
     "dev": "node ./build/dev-server.js",
     "start": "node ./build/dev-server.js",
     "test": "atool-test-mocha ./src/**/*-test.js"

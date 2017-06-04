@@ -9,6 +9,7 @@ const FriendlyErrorsPlugin = require('friendly-errors-webpack-plugin')
 const merge = require('webpack-merge')
 const webpack = require('webpack')
 const OptimizeCSSPlugin = require('optimize-css-assets-webpack-plugin')
+const chalk = require('chalk')
 
 const theme = require('../theme.js')()
 
@@ -30,7 +31,7 @@ const baseConfig = {
     output: {
         // options related to how webpack emits results
 
-        path: path.resolve(__dirname, "../web/public/assets"), // string
+        path: path.resolve(__dirname, "../../web/public/assets"), // string
         // the target directory for all output files
         // must be an absolute path (use the Node.js path module)
 
@@ -310,25 +311,6 @@ const baseConfig = {
         noInfo: false, // only errors & warns on hot reload
         // ...
     },
-
-    // plugins: [
-    //     new ExtractTextPlugin({
-    //         filename: 'css/[name]-[hash].css'
-    //     }),
-
-    //     new HtmlWebpackPlugin({
-    //         template: '../src/index.ejs',
-    //         filename: '[name]-[hash].html',
-    //         inject: true
-    //     }),
-        
-    //     new FriendlyErrorsPlugin()
-    //     // ...
-    // ],
-    // // list of additional plugins
-
-
-    /* Advanced configuration (click to show) */
 }
 
 const webpackEntry = ['webpack-hot-middleware/client?noInfo=true&reload=true', baseConfig.entry]
@@ -378,7 +360,17 @@ const prodConfig = merge(baseConfig, {
                 safe: true
             }
         }),
-        new webpack.NoErrorsPlugin(),
+        new HtmlWebpackPlugin({
+            template: './src/index.ejs',
+            filename: 'index.html',
+            inject: true,
+            minify: {
+                removeComments: true,
+                collapseWhitespace: true,
+                removeAttributeQuotes: true
+            }
+        }),
+        new webpack.NoEmitOnErrorsPlugin(),
         new webpack.ProgressPlugin((percentage, msg) => {
             const stream = process.stderr;
             if (stream.isTTY && percentage < 0.71) {
