@@ -21,7 +21,7 @@ const HeaderComponent = (props) => {
                         defaultSelectedKeys={[routePath]}
                         style={{ lineHeight: '64px', backgroundColor: 'transparent' }}
                     >
-                        <Menu.Item key="posts"><Link to="/">Home</Link></Menu.Item>
+                        <Menu.Item key="posts"><Link to="/">Home123</Link></Menu.Item>
                         <Menu.Item key="archive"><Link to="archive">Archive</Link></Menu.Item>
                         <Menu.Item key="about"><Link to="about">About me</Link></Menu.Item>
                         <Menu.Item key="resume"><Link to="resume">Resume</Link></Menu.Item>

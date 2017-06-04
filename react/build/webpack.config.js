@@ -330,7 +330,10 @@ const baseConfig = {
     /* Advanced configuration (click to show) */
 }
 
+// const webpackEntry = ['webpack-hot-middleware/client?noInfo=true&reload=true', baseConfig.entry]
+const webpackEntry = ['./build/dev-client', baseConfig.entry]
 const devConfig = merge(baseConfig, {
+    entry: webpackEntry,
     output: {
         publicPath: '/'
     },
