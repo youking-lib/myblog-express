@@ -4,7 +4,7 @@ import { Link } from 'dva/router'
 
 import HeaderComponent from './Header'
 import MainLayout from './MainLayout'
-import './AdminLayout.less'
+import './AdminLayout.module.less'
 
 const { Header, Content, Footer, Sider } = Layout
 const SubMenu = Menu.SubMenu

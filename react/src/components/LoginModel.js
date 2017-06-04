@@ -1,7 +1,7 @@
 import React from 'react'
 import { Modal, Button, Icon, Form, Input, Checkbox } from 'antd'
 
-import Style from './LoginModel.less'
+import Style from './LoginModel.module.less'
 
 const FormItem = Form.Item
 

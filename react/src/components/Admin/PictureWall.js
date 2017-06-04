@@ -1,6 +1,6 @@
 import React, { Component } from 'react'
 import { Upload, Icon, Modal, Spin } from 'antd';
-import Style from './PictureWall.less'
+import Style from './PictureWall.module.less'
 
 class PictureWallComponent extends React.Component {
     state = {

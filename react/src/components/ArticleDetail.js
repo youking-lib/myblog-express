@@ -1,5 +1,5 @@
 import React, { Component } from 'react' 
-import Style from './ArticleDetail.less'
+import Style from './ArticleDetail.module.less'
 import { Tag } from 'antd'
 import Editor from './Editor/EditorArea'
 

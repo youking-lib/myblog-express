@@ -2,7 +2,7 @@ import React from 'react'
 import { Layout, Menu, Breadcrumb, Row, Col } from 'antd'
 
 import { Router, Link } from 'dva/router'
-import Style from './MainLayout.less'
+import Style from './MainLayout.module.less'
 
 const { Header, Content, Footer } = Layout
 

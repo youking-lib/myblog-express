@@ -1,7 +1,7 @@
 import React from 'react'
 import { Timeline, Icon, Spin } from 'antd'
 import { Link } from 'dva/router'
-import Style from './Archive.less'
+import Style from './Archive.module.less'
 import { formatTime, generateTagColor } from '../utils'
 
 const Archive = ({timeline, loading}) => {

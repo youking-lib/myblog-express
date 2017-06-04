@@ -2,7 +2,7 @@ import React from 'react'
 import { Layout, Menu, Breadcrumb, Row, Col, Icon } from 'antd'
 import { Router, Link } from 'dva/router'
 
-import Style from './MainLayout.less'
+import Style from './MainLayout.module.less'
 import HeaderComponent from './Header'
 import UserCard from './UserCard'
 import LoginModel from './LoginModel'

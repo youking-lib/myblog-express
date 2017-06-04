@@ -8,6 +8,7 @@ const runsack = require('rucksack-css')
 const FriendlyErrorsPlugin = require('friendly-errors-webpack-plugin')
 const merge = require('webpack-merge')
 const webpack = require('webpack')
+const OptimizeCSSPlugin = require('optimize-css-assets-webpack-plugin')
 
 const theme = require('../theme.js')()
 
@@ -330,8 +331,7 @@ const baseConfig = {
     /* Advanced configuration (click to show) */
 }
 
-// const webpackEntry = ['webpack-hot-middleware/client?noInfo=true&reload=true', baseConfig.entry]
-const webpackEntry = ['./build/dev-client', baseConfig.entry]
+const webpackEntry = ['webpack-hot-middleware/client?noInfo=true&reload=true', baseConfig.entry]
 const devConfig = merge(baseConfig, {
     entry: webpackEntry,
     output: {
@@ -348,7 +348,6 @@ const devConfig = merge(baseConfig, {
         new ExtractTextPlugin({
             filename: 'css/[name]-[hash].css',
             allChunks: false,
-
         }),
         new HtmlWebpackPlugin({
             template: './src/index.ejs',
@@ -360,9 +359,38 @@ const devConfig = merge(baseConfig, {
     // list of additional plugins
 })
 
-const prodConfig = {
-
-}
+const prodConfig = merge(baseConfig, {
+    plugins: [
+        new webpack.DefinePlugin({
+            'process.env.NODE_ENV': '"production"'
+        }),
+        new webpack.optimize.UglifyJsPlugin({
+            output: {
+                ascii_only: true,
+            },
+            sourceMap: true
+        }),
+        new ExtractTextPlugin({
+            filename: 'css/[name]-[hash].css'
+        }),
+        new OptimizeCSSPlugin({
+            cssProcessorOptions: {
+                safe: true
+            }
+        }),
+        new webpack.NoErrorsPlugin(),
+        new webpack.ProgressPlugin((percentage, msg) => {
+            const stream = process.stderr;
+            if (stream.isTTY && percentage < 0.71) {
+                stream.cursorTo(0);
+                stream.write(`📦  ${chalk.magenta(msg)}`);
+                stream.clearLine(1);
+            } else if (percentage === 1) {
+                console.log(chalk.green('\nwebpack: bundle build is now finished.'));
+            }
+        }),
+    ]
+})
 
 module.exports = {
     dev: devConfig,

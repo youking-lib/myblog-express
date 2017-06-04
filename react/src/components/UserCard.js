@@ -2,7 +2,7 @@ import React from 'react'
 import { Card, Icon } from 'antd'
 
 import Img from '../assets/head_img.jpeg'
-import Style from './UserCard.less'
+import Style from './UserCard.module.less'
 
 const UserCard = () => {
     return (

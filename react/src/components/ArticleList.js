@@ -2,7 +2,7 @@ import React from 'react'
 import { Tabs, Card, Tag, Icon, Row, Col, Button, Dropdown, Menu } from 'antd'
 import { Link } from 'dva/router'
 
-import Style from './ArticleList.less'
+import Style from './ArticleList.module.less'
 import { formatTime, generateTagColor } from '../utils'
 
 const { TabPane } = Tabs

@@ -1,7 +1,7 @@
 import React, { Component } from 'react'
 import { Layout, Input, Anchor, Icon, message, Select, Col } from 'antd'
 
-import Style from './Admin.less'
+import Style from './Admin.module.less'
 import Editor from '../Editor'
 
 const { Header, Content } = Layout

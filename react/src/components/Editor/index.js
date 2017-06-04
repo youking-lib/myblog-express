@@ -4,7 +4,7 @@ import { Layout, Input, Anchor, Icon, Row, Col, Button, Card, message, Popconfir
 import Draft, { EditorState, RichUtils, convertFromRaw, convertToRaw, convertFromHTML, Modifier } from 'draft-js'
 
 import EditorArea from './EditorArea'
-import Style from './index.less'
+import Style from './index.module.less'
 import BlockStyleControls from './BlockStyleControls'
 import InlineStyleControls from './InlineStyleControls'
 
